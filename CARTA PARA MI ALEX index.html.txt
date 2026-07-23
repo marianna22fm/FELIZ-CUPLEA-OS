@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una sorpresa para ti ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary-color:#d94141;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  min-height:100vh;
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ================= PÁGINA 1 ================= */
+#pagina1{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  padding-bottom:185px;
+
+  background:
+  linear-gradient(135deg,rgba(0,0,0,0.2),rgba(0,0,0,0.4)),
+  url('https://i.ibb.co/8DHnFP9n/Captura-de-pantalla-2026-07-20-053335.png')
+  no-repeat center center/cover;
+
+  transition:opacity .8s ease;
+}
+
+/* ================= PÁGINA 2 ================= */
+#pagina2{
+  display:none;
+  opacity:0;
+  min-height:100vh;
+  width:100%;
+  position:relative;
+  justify-content:center;
+  align-items:flex-end;
+  padding-bottom:80px;
+
+  background:
+  url('https://i.ibb.co/Z6nhhjBn/paguina-2.png')
+  no-repeat center center/cover;
+
+  transition:opacity .8s ease;
+}
+
+/* ================= BOTONES ================= */
+.btn-action{
+  background:var(--primary-color);
+  color:white;
+  border:none;
+  padding:16px 70px;
+  font-size:1.2rem;
+  font-weight:600;
+  border-radius:50px;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+  transition:.3s;
+  user-select:none;
+  z-index:10;
+}
+
+.btn-action:hover{
+  transform:scale(1.08);
+  background:#b82e2e;
+}
+
+/* ================= CALENDARIO ================= */
+.calendario-container{
+  width:430px;
+  height:300px;
+  position:absolute;
+
+  /* CAMBIA ESTOS VALORES PARA MOVERLO */
+  top:55px;
+  left:25px;
+
+  background:transparent;
+}
+
+.calendario{
+  width:430px;
+  padding:20px;
+  background:transparent;
+  border-radius:0;
+  backdrop-filter:none;
+  text-align:center;
+  font-family:'Georgia',serif;
+}
+
+.calendario h2{
+  font-size:28px;
+  margin-bottom:15px;
+  color:#e8a0ad;
+}
+
+.dias-semana{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  font-weight:bold;
+  font-size:14px;
+  color:#e8a0ad;
+  margin-bottom:8px;
+}
+
+.dias{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:8px;
+}
+
+.dias span{
+  height:35px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:14px;
+  color:#555;
+  position:relative;
+}
+
+/* ================= CORAZÓN CORREGIDO ================= */
+.corazon {
+  color: #b85c6b !important;
+  font-weight: bold;
+}
+
+.corazon div {
+  position: absolute;
+  font-size: 45px;
+  color: #e8a0ad;
+  z-index: -1;
+  top: -8px;
+
+  /* Animación con soporte multiplataforma */
+  -webkit-animation: latidoInfinito 1.3s infinite ease-in-out;
+  animation: latidoInfinito 1.3s infinite ease-in-out;
+  
+  /* Mantiene la visibilidad constante */
+  will-change: transform;
+  display: inline-block;
+}
+
+/* KEYFRAMES CORREGIDOS PARA QUE NO DESAPAREZCA */
+@-webkit-keyframes latidoInfinito {
+  0%   { -webkit-transform: scale(1); }
+  20%  { -webkit-transform: scale(1.2); }
+  40%  { -webkit-transform: scale(1); }
+  60%  { -webkit-transform: scale(1.2); }
+  80%  { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+@keyframes latidoInfinito {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.2); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.2); }
+  80%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+</style>
+</head>
+<body>
+
+  <!-- ================= PÁGINA 1 ================= -->
+  <div id="pagina1">
+    <button class="btn-action" onclick="irAContinuacion()">
+      TE AMO PASTELITO
+    </button>
+  </div>
+
+  <!-- ================= PÁGINA 2 ================= -->
+  <div id="pagina2">
+    
+    <!-- CALENDARIO JUNIO -->
+    <div class="calendario-container">
+      <div class="calendario">
+        <h2>Junio</h2>
+
+        <div class="dias-semana">
+          <span>L</span>
+          <span>M</span>
+          <span>M</span>
+          <span>J</span>
+          <span>V</span>
+          <span>S</span>
+          <span>D</span>
+        </div>
+
+        <div class="dias">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+          <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+          <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+          <span>22</span><span>23</span><span>24</span>
+
+          <span class="corazon">
+            25
+            <div>♥</div>
+          </span>
+
+          <span>26</span><span>27</span><span>28</span>
+          <span>29</span><span>30</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-action" onclick="volverInicio()">
+      ↩ Regresar al inicio
+    </button>
+  </div>
+
+  <script>
+    function irAContinuacion() {
+      const p1 = document.getElementById('pagina1');
+      const p2 = document.getElementById('pagina2');
+
+      p1.style.opacity = '0';
+      setTimeout(() => {
+        p1.style.display = 'none';
+        p2.style.display = 'flex';
+        setTimeout(() => {
+          p2.style.opacity = '1';
+        }, 50);
+      }, 700);
+    }
+
+    function volverInicio() {
+      const p1 = document.getElementById('pagina1');
+      const p2 = document.getElementById('pagina2');
+
+      p2.style.opacity = '0';
+      setTimeout(() => {
+        p2.style.display = 'none';
+        p1.style.display = 'flex';
+        setTimeout(() => {
+          p1.style.opacity = '1';
+        }, 50);
+      }, 700);
+    }
+  </script>
+</body>
+</html>
