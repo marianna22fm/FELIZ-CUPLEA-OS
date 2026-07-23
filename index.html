@@ -29,19 +29,23 @@ body{
 /* ================= PÁGINA 1 ================= */
 #pagina1{
   min-height:100vh;
+  width:100%;
   display:flex;
   justify-content:center;
   align-items:flex-end;
   padding-bottom:185px;
 
-  background:
-  linear-gradient(135deg,rgba(0,0,0,0.2),rgba(0,0,0,0.4)),
-  url('https://i.ibb.co/8DHnFP9n/Captura-de-pantalla-2026-07-20-053335.png')
-  no-repeat center center/cover;
+  background-color:#f8f4f1;
+  background-image:
+    linear-gradient(135deg,rgba(0,0,0,0.15),rgba(0,0,0,0.25)),
+    url('https://i.ibb.co/8DHnFP9n/Captura-de-pantalla-2026-07-20-053335.png');
+
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:contain;
 
   transition:opacity .8s ease;
 }
-
 /* ================= PÁGINA 2 ================= */
 #pagina2{
   display:none;
