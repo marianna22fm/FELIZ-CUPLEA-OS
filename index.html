@@ -87,9 +87,9 @@ body{
   height:300px;
   position:absolute;
 
-  /* CAMBIA ESTOS VALORES PARA MOVERLO */
-  top:55px;
-  left:25px;
+  /* MOVERLO */
+  top:85px;
+  left:65px;
 
   background:transparent;
 }
@@ -105,7 +105,7 @@ body{
 }
 
 .calendario h2{
-  font-size:28px;
+  font-size:30px;
   margin-bottom:15px;
   color:#e8a0ad;
 }
@@ -114,7 +114,7 @@ body{
   display:grid;
   grid-template-columns:repeat(7,1fr);
   font-weight:bold;
-  font-size:14px;
+  font-size:24px;
   color:#e8a0ad;
   margin-bottom:8px;
 }
@@ -130,50 +130,61 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:14px;
+  font-size:20px;
   color:#555;
   position:relative;
 }
 
 /* ================= CORAZÓN CORREGIDO ================= */
 .corazon {
-  color: #b85c6b !important;
-  font-weight: bold;
+  color:#b85c6b !important;
+  font-weight:bold;
+  position:relative;
+  z-index:1;
 }
 
 .corazon div {
-  position: absolute;
-  font-size: 45px;
-  color: #e8a0ad;
-  z-index: -1;
-  top: -8px;
+  position:absolute;
+  font-size:45px;
+  color:#e8a0ad;
 
-  /* Animación con soporte multiplataforma */
-  -webkit-animation: latidoInfinito 1.3s infinite ease-in-out;
-  animation: latidoInfinito 1.3s infinite ease-in-out;
+  top:-10px;
+  left:50%;
   
-  /* Mantiene la visibilidad constante */
-  will-change: transform;
-  display: inline-block;
+  transform:translateX(-50%);
+  z-index:-1;
+
+  -webkit-animation:latidoInfinito 1.3s infinite ease-in-out;
+  animation:latidoInfinito 1.3s infinite ease-in-out;
+
+  display:block;
+  opacity:1;
+  pointer-events:none;
 }
 
-/* KEYFRAMES CORREGIDOS PARA QUE NO DESAPAREZCA */
-@-webkit-keyframes latidoInfinito {
-  0%   { -webkit-transform: scale(1); }
-  20%  { -webkit-transform: scale(1.2); }
-  40%  { -webkit-transform: scale(1); }
-  60%  { -webkit-transform: scale(1.2); }
-  80%  { -webkit-transform: scale(1); }
-  100% { -webkit-transform: scale(1); }
-}
 
 @keyframes latidoInfinito {
-  0%   { transform: scale(1); }
-  20%  { transform: scale(1.2); }
-  40%  { transform: scale(1); }
-  60%  { transform: scale(1.2); }
-  80%  { transform: scale(1); }
-  100% { transform: scale(1); }
+
+  0%{
+    transform:translateX(-50%) scale(1);
+  }
+
+  25%{
+    transform:translateX(-50%) scale(1.25);
+  }
+
+  50%{
+    transform:translateX(-50%) scale(1);
+  }
+
+  75%{
+    transform:translateX(-50%) scale(1.25);
+  }
+
+  100%{
+    transform:translateX(-50%) scale(1);
+  }
+
 }
 </style>
 </head>
