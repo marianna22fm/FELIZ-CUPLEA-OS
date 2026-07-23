@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Una sorpresa para ti ✨</title>
+<title>FELIZ CUMPLEAÑOS </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
@@ -60,6 +60,23 @@ body{
   transition:opacity .8s ease;
 }
 
+/* ================= PÁGINA 3 ================= */
+#pagina3{
+  display:none;
+  opacity:0;
+  min-height:100vh;
+  width:100%;
+  position:relative;
+  justify-content:center;
+  align-items:flex-end;
+  padding-bottom:80px;
+
+  background:
+  url('https://i.ibb.co/Z6nhhjBn/paguina-2.png')
+  no-repeat center center/cover;
+
+  transition:opacity .8s ease;
+}
 /* ================= BOTONES ================= */
 .btn-action{
   background:var(--primary-color);
@@ -84,7 +101,7 @@ body{
 /* ================= CALENDARIO ================= */
 .calendario-container{
   width:60px;
-  height:30px;
+  height:80px;
   position:absolute;
 
   /* CAMBIA ESTOS VALORES PARA MOVERLO */
@@ -175,7 +192,31 @@ body{
   80%  { transform: scale(1); }
   100% { transform: scale(1); }
 }
+/* ================= BOTÓN CARTA ================= */
 
+.btn-carta{
+    position:absolute;
+
+    /* ========= POSICIÓN ========= */
+    top:55px;      /* Arriba / Abajo */
+    left:575px;     /* Izquierda / Derecha */
+    /* ============================ */
+
+    width:330px;    /* Tamaño */
+    cursor:pointer;
+    z-index:20;
+
+    transition:.35s ease;
+}
+
+.btn-carta img{
+    width:100%;
+    display:block;
+}
+
+.btn-carta:hover{
+    transform:scale(1.08) rotate(-4deg);
+}
 </style>
 </head>
 <body>
@@ -221,13 +262,24 @@ body{
         </div>
       </div>
     </div>
+<div class="btn-carta" onclick="irAPagina3()">
 
+    <img
+    src="https://i.ibb.co/Df1q7BqG/CARTA.png"
+    alt="Carta">
+
+</div>
     <button class="btn-action" onclick="volverInicio()">
       ↩ Regresar al inicio
     </button>
   </div>
 
   <script>
+  function irAPagina3(){
+
+    alert("Aquí irá la Página 3 ❤️");
+
+}
     function irAContinuacion() {
       const p1 = document.getElementById('pagina1');
       const p2 = document.getElementById('pagina2');
@@ -258,3 +310,4 @@ body{
   </script>
 </body>
 </html>
+
